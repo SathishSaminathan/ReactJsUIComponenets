@@ -18,6 +18,12 @@ class ImagePreloader extends Component {
     );
   };
 
+  refreshLink = () => {
+    this.setState({
+      src: `https://placeimg.com/295/295/any/tech?=${new Date().getMilliseconds()}`,
+      loading: true
+    });
+  };
   render() {
     const { src, loading } = this.state;
     console.log(this.state.src);
@@ -30,6 +36,9 @@ class ImagePreloader extends Component {
             onLoad={this.imageLoaded}
           />
           {loading && <CircularSpinner />}
+        </div>
+        <div className="button_area">
+          <button className={`${loading && 'disabled'}`} onClick={this.refreshLink}>Refresh Image</button>
         </div>
       </div>
     );
