@@ -1,0 +1,42 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.image_container {
+  width: 315px;
+  height: 315px;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.image-container-overlay {
+  width: 95%;
+  height: 95%;
+  background-color: #fff;
+}
+
+img {
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.blurImage {
+  -webkit-filter: blur(4px);
+}
+/*# sourceMappingURL=ImagePreLoader.css.map */
