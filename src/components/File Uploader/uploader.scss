@@ -1,0 +1,13 @@
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .image{
+        width: 400px;
+        height: 300px;
+        &.blueImage{
+            -webkit-filter: blur(10px)
+        }
+    }
+}
