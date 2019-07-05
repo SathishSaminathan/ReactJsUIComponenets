@@ -12,7 +12,7 @@ class Uploader extends Component {
     imageLoaded: false
   };
   handleChange = e => {
-    console.log(e.target.files[0]);
+    console.log("",e.target.files[0]);
     this.setState(
       {
         image: e.target.files[0],
@@ -52,7 +52,8 @@ class Uploader extends Component {
     const { url, progress, imageLoaded } = this.state;
     return (
       <div className="container">
-        {progress !== 0 && <progress value={progress} max="100" />}
+        {/* {progress !== 0 && <progress value={progress} max="100" />} */}
+        <progress value={progress} max="100" />
         <br />
         <input type="file" onChange={e => this.handleChange(e)} />
         {/* <button>upload</button> */}

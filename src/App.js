@@ -4,11 +4,12 @@ import logo from './logo.svg';
 import './App.css';
 import ImagePreloader from './components/ImagePreLoader';
 import Uploader from './components/File Uploader/Uploader';
+import DragAndDrop from './components/DragAndDrop';
 
 function App() {
   return (
     <div className="App">
-      <Uploader/>
+      <DragAndDrop/>
     </div>
   );
 }
