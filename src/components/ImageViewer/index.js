@@ -38,21 +38,25 @@ class ImageViewer extends Component {
     const { ImagesData } = this.state;
     let imageCount = ImagesData.length;
 
-    console.log("ImagesData", ImagesData)
+    console.log("ImagesData", ImagesData);
 
     for (let i = 0; i < imageCount; i++) {
       if (i < 4) {
         imageTemplate.push(
-          <img
-            className="image"
-            onClick={() =>
-              this.setState({
-                visible: true,
-                selectedImages: [ImagesData[i].imageURL]
-              })
-            }
-            src={ImagesData[i].imageURL}
-          />
+          <div className="image">
+            <img src={ImagesData[i].imageURL} />
+            <div
+              className="overlay"
+              onClick={() =>
+                this.setState({
+                  visible: true,
+                  selectedImages: [ImagesData[i].imageURL]
+                })
+              }
+            >
+              <img className="eyeIcon" src="https://img.icons8.com/color/48/000000/visible.png"/>
+            </div>
+          </div>
         );
       } else {
         imageTemplate.push(
@@ -92,6 +96,7 @@ class ImageViewer extends Component {
           footer={null}
           className="customModal"
           width="500px"
+          destroyOnClose
         >
           {selectedImages && selectedImages.length === 1 ? (
             <img className="singleImage" src={selectedImages} />
