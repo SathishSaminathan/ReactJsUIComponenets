@@ -8,10 +8,10 @@ import DragAndDrop from "./components/DragAndDrop";
 import ImageViewer from "./components/ImageViewer";
 
 const ImagesData = [
-  {
-    imageURL:
-      "https://images.pexels.com/photos/1156684/pexels-photo-1156684.jpeg"
-  },
+  // {
+  //   imageURL:
+  //     "https://images.pexels.com/photos/1156684/pexels-photo-1156684.jpeg"
+  // },
   {
     imageURL:
       "https://images.pexels.com/photos/2695682/pexels-photo-2695682.jpeg"
