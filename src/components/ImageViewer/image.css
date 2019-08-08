@@ -1,0 +1,99 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.wrapper .imageContainer {
+  border-radius: 10px;
+  position: relative;
+  height: 400px;
+  width: 400px;
+  background-color: blueviolet;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.wrapper .imageContainer .image {
+  width: 50%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.wrapper .imageContainer .overlayContent {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: black;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.wrapper .imageContainer .overlayContent:hover {
+  opacity: 0.9;
+}
+
+.wrapper .imageContainer .overlayContent:hover .content .text {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.wrapper .imageContainer .overlayContent:hover .content .seeMore {
+  opacity: 1;
+}
+
+.wrapper .imageContainer .overlayContent .content .text {
+  display: block;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  color: white;
+  font-size: 30px;
+}
+
+.wrapper .imageContainer .overlayContent .content .seeMore {
+  color: white;
+  opacity: 0.5;
+}
+
+.customModal .ant-modal-body {
+  padding: 0;
+}
+
+.customModal .singleImage {
+  width: 500px;
+  height: 500px;
+}
+
+.customModal .multiImages {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=image.css.map */

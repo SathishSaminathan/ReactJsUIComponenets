@@ -1,0 +1,74 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .imageContainer {
+    border-radius: 10px;
+    position: relative;
+    height: 400px;
+    width: 400px;
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    .image {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .overlayContent {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background-color: black;
+      bottom: 0;
+      right: 0;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        opacity: 0.9;
+        .content {
+          .text {
+            transform: scale(1.2);
+          }
+          .seeMore {
+            opacity: 1;
+          }
+        }
+      }
+      .content {
+        .text {
+          display: block;
+          transition: all 0.5s ease-in-out;
+          color: white;
+          font-size: 30px;
+        }
+        .seeMore {
+          color: white;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+.customModal {
+  .ant-modal-body {
+    padding: 0;
+  }
+  .singleImage {
+    width: 500px;
+    height: 500px;
+  }
+  .multiImages {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+}
