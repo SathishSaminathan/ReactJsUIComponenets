@@ -9,7 +9,8 @@ class ImageViewer extends Component {
     this.state = {
       ImagesData: this.props.ImagesData,
       visible: false,
-      selectedImages: []
+      selectedImages: [],
+      imageCount: this.props.imageCount
     };
   }
 
@@ -35,13 +36,13 @@ class ImageViewer extends Component {
 
   renderImages() {
     let imageTemplate = [];
-    const { ImagesData } = this.state;
-    let imageCount = ImagesData.length;
+    const { ImagesData, imageCount } = this.state;
+    let totalImages = ImagesData.length;
 
     console.log("ImagesData", ImagesData);
 
-    for (let i = 0; i < imageCount; i++) {
-      if (i < 4) {
+    for (let i = 0; i < totalImages; i++) {
+      if (i < imageCount) {
         imageTemplate.push(
           <div className="image">
             <img src={ImagesData[i].imageURL} />
@@ -54,7 +55,10 @@ class ImageViewer extends Component {
                 })
               }
             >
-              <img className="eyeIcon" src="https://img.icons8.com/color/48/000000/visible.png"/>
+              <img
+                className="eyeIcon"
+                src="https://img.icons8.com/color/48/000000/visible.png"
+              />
             </div>
           </div>
         );
@@ -70,7 +74,7 @@ class ImageViewer extends Component {
             }
           >
             <div className="content">
-              <span className="text">+{imageCount - 4} Images</span>
+              <span className="text">+{totalImages - imageCount} Images</span>
               <span className="seeMore">see all</span>
             </div>
           </div>
@@ -84,12 +88,17 @@ class ImageViewer extends Component {
 
   render() {
     const { selectedImages } = this.state;
+    const { image_container_width } = this.props;
+    const image_container_width_custom = {
+      "--image_container_width": image_container_width
+    };
     console.log("selectedImages", selectedImages.length);
     return (
       <div className="wrapper">
-        <div className="imageContainer"> {this.renderImages()} </div>
+        <div className="imageContainer" style={image_container_width_custom}>
+          {this.renderImages()}
+        </div>
         <Modal
-          //   title="Basic Modal"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
