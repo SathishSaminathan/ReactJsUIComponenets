@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -6,6 +6,7 @@ import ImagePreloader from "./components/ImagePreLoader";
 import Uploader from "./components/File Uploader/Uploader";
 import DragAndDrop from "./components/DragAndDrop";
 import ImageViewer from "./components/ImageViewer";
+import GeoCode from "./components/GeoCode";
 
 const ImagesData = [
   {
@@ -49,16 +50,38 @@ const ImagesData = [
   }
 ];
 
-function App() {
-  return (
-    <div className="App">
-      {/* <DragAndDrop/> */}
-      <ImageViewer
-        imageCount={4}
-        ImagesData={ImagesData}
-      />
-    </div>
-  );
+class App extends Component {
+  state = {
+    city: null,
+    state: null,
+    country: null
+  };
+  getDetails = (city, state, country) => {
+    this.setState({
+      city,
+      state,
+      country
+    });
+  };
+  render() {
+    const { city, state, country } = this.state;
+    return (
+      <div className="App">
+        {/* <DragAndDrop/> */}
+        {/* <ImageViewer
+          imageCount={4}
+          ImagesData={ImagesData}
+        /> */}
+        <GeoCode getDetails={this.getDetails} />
+        <div>
+          <h2>Address Details</h2>
+          <p>{city}</p>
+          <p>{state}</p>
+          <p>{country}</p>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
