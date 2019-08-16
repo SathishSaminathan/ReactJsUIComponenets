@@ -7,6 +7,7 @@ import Uploader from "./components/File Uploader/Uploader";
 import DragAndDrop from "./components/DragAndDrop";
 import ImageViewer from "./components/ImageViewer";
 import GeoCode from "./components/GeoCode";
+import PaginationComponent from "./components/PaginationComponent";
 
 const ImagesData = [
   {
@@ -72,13 +73,14 @@ class App extends Component {
           imageCount={4}
           ImagesData={ImagesData}
         /> */}
-        <GeoCode getDetails={this.getDetails} />
-        <div>
+        {/* <GeoCode getDetails={this.getDetails} /> */}
+        {/* <div>
           <h2>Address Details</h2>
           <p>{city}</p>
           <p>{state}</p>
           <p>{country}</p>
-        </div>
+        </div> */}
+        <PaginationComponent/>
       </div>
     );
   }
