@@ -42,11 +42,11 @@ code {
 /* Style the active class (and buttons on mouse-over) */
 
 .slick-prev {
-  left: -10px !important;
+  left: -20px !important;
   z-index: 1;
 }
 .slick-next {
-  right: -10px !important;
+  right: -20px !important;
   z-index: 1;
 }
 
@@ -54,9 +54,20 @@ code {
   cursor: pointer;
   box-sizing: border-box;
 }
-.sample h3 {
-  padding: 10px;
-  background-color: green;
+.sample .textArea {
+  height: 30px;
+  width: 30px;
   margin: 10px;
-  border-radius: 50%
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  border: 1px solid #218838;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.2);
+  color: #1e7e34;
+  font-weight: bold;
 }
