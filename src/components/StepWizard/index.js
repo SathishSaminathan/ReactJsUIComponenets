@@ -38,10 +38,15 @@ export default class StepWizard extends Component {
   }
 
   getSteps = () => {
+    // return [
+    //   "Select master blaster campaign settings",
+    //   "Create an ad group",
+    //   "Create an ad"
+    // ];
     return [
-      "Select master blaster campaign settings",
-      "Create an ad group",
-      "Create an ad"
+      "",
+      "",
+      ""
     ];
   };
 

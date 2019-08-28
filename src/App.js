@@ -10,6 +10,7 @@ import ImageViewer from "./components/ImageViewer";
 import GeoCode from "./components/GeoCode";
 import PaginationComponent from "./components/PaginationComponent";
 import StepWizard from "./components/StepWizard";
+import Formsample from "./components/Form";
 
 const ImagesData = [
   {
@@ -85,6 +86,7 @@ class App extends Component {
         </div> */}
         {/* <PaginationComponent/> */}
         <StepWizard isModalVisible={true}/>
+        {/* <Formsample/> */}
       </div>
     );
   }
