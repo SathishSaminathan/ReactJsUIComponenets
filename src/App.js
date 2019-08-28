@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -8,6 +9,7 @@ import DragAndDrop from "./components/DragAndDrop";
 import ImageViewer from "./components/ImageViewer";
 import GeoCode from "./components/GeoCode";
 import PaginationComponent from "./components/PaginationComponent";
+import StepWizard from "./components/StepWizard";
 
 const ImagesData = [
   {
@@ -64,6 +66,7 @@ class App extends Component {
       country
     });
   };
+  
   render() {
     const { city, state, country } = this.state;
     return (
@@ -80,7 +83,8 @@ class App extends Component {
           <p>{state}</p>
           <p>{country}</p>
         </div> */}
-        <PaginationComponent/>
+        {/* <PaginationComponent/> */}
+        <StepWizard isModalVisible={true}/>
       </div>
     );
   }
