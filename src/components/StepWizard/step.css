@@ -1,0 +1,98 @@
+.main_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+.main_container .header {
+  min-height: 100px;
+  background-color: #2f404c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main_container .header .number_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main_container .header .number_area .separate_number {
+  width: 150px;
+  position: relative;
+}
+
+.main_container .header .number_area .separate_number::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: #637079;
+  width: 70%;
+  right: 3%;
+  top: 50%;
+}
+
+.main_container .header .number_area .separate_number:last-child {
+  width: 35px;
+}
+
+.main_container .header .number_area .separate_number:last-child::after {
+  width: 0;
+}
+
+.main_container .header .number_area .separate_number .number {
+  width: 35px;
+  height: 35px;
+  background-color: #637079;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.main_container .header .number_area .separate_number .number.active {
+  background-color: #19a688;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.main_container .footer {
+  min-height: 50px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button_style, .skip {
+  border: none;
+  background: #19a688;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+/*# sourceMappingURL=step.css.map */

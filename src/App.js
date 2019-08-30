@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "react-bootstrap";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -8,6 +9,10 @@ import DragAndDrop from "./components/DragAndDrop";
 import ImageViewer from "./components/ImageViewer";
 import GeoCode from "./components/GeoCode";
 import PaginationComponent from "./components/PaginationComponent";
+import StepWizard from "./components/StepWizard";
+import Formsample from "./components/Form";
+import Step1 from "./components/StepWizard/Step1";
+import Step2 from "./components/StepWizard/Step2";
 
 const ImagesData = [
   {
@@ -51,6 +56,15 @@ const ImagesData = [
   }
 ];
 
+const steps = [
+  {
+    component: <Step1 />
+  },
+  {
+    component: <Step2 />
+  }
+];
+
 class App extends Component {
   state = {
     city: null,
@@ -64,6 +78,7 @@ class App extends Component {
       country
     });
   };
+
   render() {
     const { city, state, country } = this.state;
     return (
@@ -80,7 +95,9 @@ class App extends Component {
           <p>{state}</p>
           <p>{country}</p>
         </div> */}
-        <PaginationComponent/>
+        {/* <PaginationComponent/> */}
+        <StepWizard steps={steps} />
+        {/* <Formsample/> */}
       </div>
     );
   }
