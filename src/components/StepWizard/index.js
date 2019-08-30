@@ -1,134 +1,94 @@
 import React, { Component } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import { Modal } from "react-bootstrap";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: "90%"
-  },
-  backButton: {
-    marginRight: theme.spacing(1)
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1)
-  }
-}));
+import "./step.css";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./Step3";
+import Step4 from "./Step4";
+import Step5 from "./Step5";
 
-export default class StepWizard extends Component {
+class StepWizard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeStep: 0,
-      isModalVisible: this.props.isModalVisible
+      // totalSteps: props.steps.length,
+      totalSteps: 5,
+      activeIndex: 0,
+      steps: props.steps
     };
   }
 
-  componentDidMount() {}
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      isModalVisible: nextProps.isModalVisible
-    });
-  }
-
-  getSteps = () => {
-    // return [
-    //   "Select master blaster campaign settings",
-    //   "Create an ad group",
-    //   "Create an ad"
-    // ];
-    return [
-      "",
-      "",
-      ""
-    ];
-  };
-
-  handleNext = () => {
-    this.setState({
-      activeStep: this.state.activeStep + 1
-    });
-  };
-
-  handleBack = () => {
-    this.setState({
-      activeStep: this.state.activeStep - 1
-    });
-  };
-
-  handleReset = () => {
-    this.setState({
-      activeStep: 0
-    });
-  };
-
-  getStepContent(stepIndex) {
-    switch (stepIndex) {
-      case 0:
-        return "Select campaign settings...";
-      case 1:
-        return "What is an ad group anyways?";
-      case 2:
-        return "This is the bit I really care about!";
-      default:
-        return "Uknown stepIndex";
+  _renderNumber = () => {
+    const { totalSteps, activeIndex } = this.state;
+    let template = [];
+    for (let i = 0; i < totalSteps; i++) {
+      template.push(
+        <div className="separate_number">
+          <div className={`number ${i <= activeIndex ? "active" : ""}`}>
+            {i + 1}
+          </div>
+        </div>
+      );
     }
-  }
+    return template;
+  };
+
+  _renderStep = () => {
+    // let template = [];
+    const { activeIndex, steps } = this.state;
+
+    // template = steps.find((step, i) => i === activeIndex);
+    // return template.component;
+
+    switch (activeIndex) {
+      case 0:
+        return <Step1 nextStep={() => this._nextStep()} />;
+      case 1:
+        return <Step2 nextStep={() => this._nextStep()} />;
+      case 2:
+        return <Step3 nextStep={() => this._nextStep()} />;
+      case 3:
+        return <Step4 nextStep={() => this._nextStep()} />;
+      case 4:
+        return <Step5 nextStep={() => this._nextStep()} />;
+      default:
+        return;
+    }
+  };
+
+  _nextStep = () => {
+    const { activeIndex, totalSteps } = this.state;
+    if (activeIndex + 1 !== totalSteps) {
+      this.setState({
+        activeIndex: this.state.activeIndex + 1
+      });
+    }
+  };
+
+  _prevStep = () => {};
 
   render() {
-    const classes = useStyles;
-    const { activeStep, isModalVisible } = this.state;
-    const steps = this.getSteps();
+    const { totalSteps, activeIndex } = this.state;
     return (
-      <div className={classes.root}>
-        <Modal show={isModalVisible}>
-          <Stepper activeStep={activeStep} alternativeLabel>
-            {steps.map(label => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          <div>
-            {activeStep === steps.length ? (
-              <div>
-                <Typography className={classes.instructions}>
-                  All steps completed
-                </Typography>
-                <Button onClick={this.handleReset}>Reset</Button>
-              </div>
-            ) : (
-              <div>
-                <Typography className={classes.instructions}>
-                  {this.getStepContent(activeStep)}
-                </Typography>
-                <div>
-                  <Button
-                    disabled={activeStep === 0}
-                    onClick={this.handleBack}
-                    className={classes.backButton}
-                  >
-                    Back
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={this.handleNext}
-                  >
-                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                  </Button>
-                </div>
-              </div>
-            )}
-          </div>
-        </Modal>
+      <div className="main_container">
+        <div className="header">
+          <div className="number_area">{this._renderNumber()}</div>
+        </div>
+        <div className="body_container">{this._renderStep()}</div>
+        <div className="footer">
+          {activeIndex + 1 !== totalSteps && (
+            <button
+              className="skip"
+              onClick={() => this._nextStep()}
+              disabled={activeIndex + 1 === totalSteps}
+            >
+              Skip this step
+            </button>
+          )}
+        </div>
       </div>
     );
   }
 }
+
+export default StepWizard;
