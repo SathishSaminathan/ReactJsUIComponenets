@@ -42,15 +42,40 @@ class StepWizard extends Component {
 
     switch (activeIndex) {
       case 0:
-        return <Step1 nextStep={() => this._nextStep()} />;
+        return (
+          <Step1
+            nextStep={() => this._nextStep()}
+            prevStep={() => this._prevStep()}
+          />
+        );
       case 1:
-        return <Step2 nextStep={() => this._nextStep()} />;
+        return (
+          <Step2
+            nextStep={() => this._nextStep()}
+            prevStep={() => this._prevStep()}
+          />
+        );
       case 2:
-        return <Step3 nextStep={() => this._nextStep()} />;
+        return (
+          <Step3
+            nextStep={() => this._nextStep()}
+            prevStep={() => this._prevStep()}
+          />
+        );
       case 3:
-        return <Step4 nextStep={() => this._nextStep()} />;
+        return (
+          <Step4
+            nextStep={() => this._nextStep()}
+            prevStep={() => this._prevStep()}
+          />
+        );
       case 4:
-        return <Step5 nextStep={() => this._nextStep()} />;
+        return (
+          <Step5
+            nextStep={() => this._nextStep()}
+            prevStep={() => this._prevStep()}
+          />
+        );
       default:
         return;
     }
@@ -65,7 +90,14 @@ class StepWizard extends Component {
     }
   };
 
-  _prevStep = () => {};
+  _prevStep = () => {
+    const { activeIndex } = this.state;
+    if (activeIndex - 1 !== -1) {
+      this.setState({
+        activeIndex: this.state.activeIndex - 1
+      });
+    }
+  };
 
   render() {
     const { totalSteps, activeIndex } = this.state;

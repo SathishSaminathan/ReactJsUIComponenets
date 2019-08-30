@@ -4,6 +4,9 @@ class Step4 extends Component {
   render() {
     return (
       <div style={{ height: 400, backgroundColor: "white" }}>
+        <button className="button_style" onClick={() => this.props.prevStep()}>
+          Back
+        </button>
         Step4
         <button className="button_style" onClick={() => this.props.nextStep()}>
           Save & Continue
