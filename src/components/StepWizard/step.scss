@@ -9,6 +9,7 @@ $white: #ffffff;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+  box-shadow: 0 0 11px 3px #0000002b;
   .header {
     min-height: 100px;
     background-color: $background_color;
@@ -21,21 +22,27 @@ $white: #ffffff;
       .separate_number {
         width: 150px;
         position: relative;
-        &::after {
+        &::before {
           content: "";
           position: absolute;
           height: 2px;
           background-color: $inactive_color;
-          width: 70%;
-          right: 3%;
+          width: 106px;
+          left: -110px;
           top: 50%;
+        }
+        &:nth-child(1)::before {
+          width: 0;
+        }
+        &.active::before {
+          background-color: $green_color;
         }
         &:last-child {
           width: 35px;
         }
-        &:last-child::after {
-          width: 0;
-        }
+        // &:last-child::after {
+        //   width: 0;
+        // }
         .number {
           width: 35px;
           height: 35px;
@@ -60,15 +67,47 @@ $white: #ffffff;
     background-color: $white;
     display: flex;
     align-items: center;
-    
   }
 }
 
-.button_style, .skip {
+.button_style,
+.skip {
   border: none;
   background: $green_color;
   color: $white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 15px;
   cursor: pointer;
+  outline: none;
+}
+
+.active {
+  border: none !important;
+  transform: none;
+}
+
+.button_text_area {
+  display: flex;
+  align-items: center;
+}
+
+.loading_spinner {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  display: inline-block;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top: 2px solid $white;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

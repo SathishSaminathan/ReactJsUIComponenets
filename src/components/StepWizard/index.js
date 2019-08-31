@@ -63,7 +63,10 @@ class StepWizard extends Component {
     let template = [];
     for (let i = 0; i < totalSteps; i++) {
       template.push(
-        <div className="separate_number" key={i}>
+        <div
+          className={`separate_number ${i <= activeIndex ? "active" : ""}`}
+          key={i}
+        >
           <div className={`number ${i <= activeIndex ? "active" : ""}`}>
             {i + 1}
           </div>
