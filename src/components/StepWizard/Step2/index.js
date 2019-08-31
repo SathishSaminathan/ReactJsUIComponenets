@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 class Step2 extends Component {
+  componentDidMount() {
+    console.log("step2 componentDidMount");
+  }
   render() {
     return (
       <div style={{ height: 400, backgroundColor: "white" }}>

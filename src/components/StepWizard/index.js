@@ -11,19 +11,59 @@ class StepWizard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // totalSteps: props.steps.length,
-      totalSteps: 5,
       activeIndex: 0,
-      steps: props.steps
+      steps: [
+        {
+          component: (
+            <Step1
+              nextStep={() => this._nextStep()}
+              prevStep={() => this._prevStep()}
+            />
+          )
+        },
+        {
+          component: (
+            <Step2
+              nextStep={() => this._nextStep()}
+              prevStep={() => this._prevStep()}
+            />
+          )
+        },
+        {
+          component: (
+            <Step3
+              nextStep={() => this._nextStep()}
+              prevStep={() => this._prevStep()}
+            />
+          )
+        },
+        {
+          component: (
+            <Step4
+              nextStep={() => this._nextStep()}
+              prevStep={() => this._prevStep()}
+            />
+          )
+        },
+        {
+          component: (
+            <Step5
+              nextStep={() => this._nextStep()}
+              prevStep={() => this._prevStep()}
+            />
+          )
+        }
+      ]
     };
   }
 
   _renderNumber = () => {
-    const { totalSteps, activeIndex } = this.state;
+    const { activeIndex, steps } = this.state;
+    const totalSteps = steps.length;
     let template = [];
     for (let i = 0; i < totalSteps; i++) {
       template.push(
-        <div className="separate_number">
+        <div className="separate_number" key={i}>
           <div className={`number ${i <= activeIndex ? "active" : ""}`}>
             {i + 1}
           </div>
@@ -34,55 +74,16 @@ class StepWizard extends Component {
   };
 
   _renderStep = () => {
-    // let template = [];
+    let template = [];
     const { activeIndex, steps } = this.state;
 
-    // template = steps.find((step, i) => i === activeIndex);
-    // return template.component;
-
-    switch (activeIndex) {
-      case 0:
-        return (
-          <Step1
-            nextStep={() => this._nextStep()}
-            prevStep={() => this._prevStep()}
-          />
-        );
-      case 1:
-        return (
-          <Step2
-            nextStep={() => this._nextStep()}
-            prevStep={() => this._prevStep()}
-          />
-        );
-      case 2:
-        return (
-          <Step3
-            nextStep={() => this._nextStep()}
-            prevStep={() => this._prevStep()}
-          />
-        );
-      case 3:
-        return (
-          <Step4
-            nextStep={() => this._nextStep()}
-            prevStep={() => this._prevStep()}
-          />
-        );
-      case 4:
-        return (
-          <Step5
-            nextStep={() => this._nextStep()}
-            prevStep={() => this._prevStep()}
-          />
-        );
-      default:
-        return;
-    }
+    template = steps.find((step, i) => i === activeIndex);
+    return template.component;
   };
 
   _nextStep = () => {
-    const { activeIndex, totalSteps } = this.state;
+    const { activeIndex, steps } = this.state;
+    const totalSteps = steps.length;
     if (activeIndex + 1 !== totalSteps) {
       this.setState({
         activeIndex: this.state.activeIndex + 1
@@ -100,7 +101,8 @@ class StepWizard extends Component {
   };
 
   render() {
-    const { totalSteps, activeIndex } = this.state;
+    const { activeIndex, steps } = this.state;
+    const totalSteps = steps.length;
     return (
       <div className="main_container">
         <div className="header">
