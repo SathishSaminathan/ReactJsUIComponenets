@@ -1,12 +1,10 @@
-.main_container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 50%;
-  -webkit-box-shadow: 0 0 11px 3px #0000002b;
-          box-shadow: 0 0 11px 3px #0000002b;
+.wizard_modal .modal-dialog {
+  -webkit-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+}
+
+.wizard_modal .modal-body {
+  padding: 0;
 }
 
 .main_container .header {

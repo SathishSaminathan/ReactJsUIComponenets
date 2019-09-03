@@ -3,13 +3,16 @@ $green_color: #19a688;
 $inactive_color: #637079;
 $white: #ffffff;
 
+.wizard_modal {
+  .modal-dialog {
+    transform: translate(0, 0) !important;
+  }
+  .modal-body {
+    padding: 0;
+  }
+}
+
 .main_container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  box-shadow: 0 0 11px 3px #0000002b;
   .header {
     min-height: 100px;
     background-color: $background_color;
@@ -170,7 +173,7 @@ $white: #ffffff;
 
 // new product styles starts here
 .new_product_container {
-  .row{
-    margin: 0
+  .row {
+    margin: 0;
   }
 }

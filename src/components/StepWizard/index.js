@@ -103,8 +103,15 @@ class StepWizard extends Component {
     const { activeIndex, steps } = this.state;
     const totalSteps = steps.length;
     return (
-      // <Modal show bsSize="lg">
-      //   <Modal.Body>
+      <Modal
+        style={{ opacity: 1 }}
+        show
+        bsSize="lg"
+        className="wizard_modal"
+        aria-labelledby="contained-modal-title-vcenter"
+        animation
+      >
+        <Modal.Body>
           <div className="main_container">
             <div className="header">
               <div className="number_area">{this._renderNumber()}</div>
@@ -122,8 +129,8 @@ class StepWizard extends Component {
               )}
             </div>
           </div>
-      //   </Modal.Body>
-      // </Modal>
+        </Modal.Body>
+      </Modal>
     );
   }
 }
