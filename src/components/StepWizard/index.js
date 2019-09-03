@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./step.css";
-import Step1 from "./Step1";
+import Campaign from "./Campaign";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
@@ -14,14 +14,16 @@ class StepWizard extends Component {
       activeIndex: 0,
       steps: [
         {
+          title: "Campaign",
           component: (
-            <Step1
+            <Campaign
               nextStep={() => this._nextStep()}
               prevStep={() => this._prevStep()}
             />
           )
         },
         {
+          title: "Merchant",
           component: (
             <Step2
               nextStep={() => this._nextStep()}
@@ -30,6 +32,7 @@ class StepWizard extends Component {
           )
         },
         {
+          title: "Products",
           component: (
             <Step3
               nextStep={() => this._nextStep()}
@@ -38,16 +41,9 @@ class StepWizard extends Component {
           )
         },
         {
+          title: "Affiliates",
           component: (
             <Step4
-              nextStep={() => this._nextStep()}
-              prevStep={() => this._prevStep()}
-            />
-          )
-        },
-        {
-          component: (
-            <Step5
               nextStep={() => this._nextStep()}
               prevStep={() => this._prevStep()}
             />
@@ -59,9 +55,8 @@ class StepWizard extends Component {
 
   _renderNumber = () => {
     const { activeIndex, steps } = this.state;
-    const totalSteps = steps.length;
     let template = [];
-    for (let i = 0; i < totalSteps; i++) {
+    steps.map((step, i) => {
       template.push(
         <div
           className={`separate_number ${i <= activeIndex ? "active" : ""}`}
@@ -70,9 +65,10 @@ class StepWizard extends Component {
           <div className={`number ${i <= activeIndex ? "active" : ""}`}>
             {i + 1}
           </div>
+          <span style={{ position: "absolute", left: -10 }}>{step.title}</span>
         </div>
       );
-    }
+    });
     return template;
   };
 

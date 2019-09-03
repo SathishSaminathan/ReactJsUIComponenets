@@ -79,11 +79,15 @@ $white: #ffffff;
   font-size: 15px;
   cursor: pointer;
   outline: none;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .active {
   border: none !important;
   transform: none;
+  color: white;
+  font-weight: normal;
 }
 
 .button_text_area {
