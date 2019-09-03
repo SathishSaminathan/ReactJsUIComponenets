@@ -24,8 +24,16 @@ class Campaign extends Component {
       case "NEW":
         return <NewCampaign />;
       case "EXISTING":
-        return <SelectExistingTemplate />;
+        return (
+          <SelectExistingTemplate selectTemplate={() => this.selectTemplate} />
+        );
     }
+  };
+
+  selectTemplate = () => {
+    this.setState({
+      activeComponent: "NEW"
+    });
   };
 
   render() {

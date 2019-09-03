@@ -4,17 +4,13 @@ import "../../styles.css";
 
 class SelectExistingTemplate extends Component {
   render() {
+    const { selectTemplate } = this.props;
     return (
       <div className="select_existing_container">
         <div className="select_label">Select Existing Template</div>
         <div className="select_save_area">
           <select className="form-control custom_select">
             <option>Campaign 1137</option>
-            <option>hai</option>
-            <option>hai</option>
-            <option>hai</option>
-            <option>hai</option>
-            <option>hai</option>
           </select>
           <button className="button_style">
             <div className="button_text_area">
@@ -31,7 +27,7 @@ class SelectExistingTemplate extends Component {
             display: "flex"
           }}
         >
-          <button className="button_style">
+          <button className="button_style" onClick={selectTemplate()}>
             <div className="button_text_area">
               <span
               // className={`${this.state.isLoading ? "loading_spinner" : ""}`}
