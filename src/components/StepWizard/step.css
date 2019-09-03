@@ -227,4 +227,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+.new_product_container .row {
+  margin: 0;
+}
 /*# sourceMappingURL=step.css.map */

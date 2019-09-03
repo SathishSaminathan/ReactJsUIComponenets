@@ -34,7 +34,12 @@ class SelectExistingTemplate extends Component {
               display: "flex"
             }}
           >
-            <button className="button_style" onClick={selectTemplate()}>
+            <button
+              className="button_style"
+              onClick={() => {
+                selectTemplate("NEW");
+              }}
+            >
               <div className="button_text_area">
                 <span
                 // className={`${this.state.isLoading ? "loading_spinner" : ""}`}

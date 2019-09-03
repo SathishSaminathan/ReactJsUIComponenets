@@ -167,3 +167,10 @@ $white: #ffffff;
   display: flex;
   justify-content: space-between;
 }
+
+// new product styles starts here
+.new_product_container {
+  .row{
+    margin: 0
+  }
+}

@@ -22,17 +22,18 @@ class Campaign extends Component {
     const { activeComponent } = this.state;
     switch (activeComponent) {
       case "NEW":
-        return <NewCampaign />;
+        return <NewCampaign selectTemplate={this.selectTemplate} />;
       case "EXISTING":
         return (
-          <SelectExistingTemplate selectTemplate={() => this.selectTemplate} />
+          <SelectExistingTemplate selectTemplate={this.selectTemplate} />
         );
     }
   };
 
-  selectTemplate = () => {
+  selectTemplate = value => {
+    debugger;
     this.setState({
-      activeComponent: "NEW"
+      activeComponent: value
     });
   };
 
