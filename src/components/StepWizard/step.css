@@ -60,6 +60,10 @@
   width: 35px;
 }
 
+.main_container .header .number_area .separate_number span {
+  font-size: 15px;
+}
+
 .main_container .header .number_area .separate_number .number {
   width: 35px;
   height: 35px;
@@ -83,6 +87,15 @@
           transform: none;
 }
 
+.main_container .body_container {
+  min-height: 405px;
+  background-color: #ffffff;
+}
+
+.main_container .body_container .template_Area {
+  width: 80%;
+}
+
 .main_container .footer {
   min-height: 50px;
   background-color: #ffffff;
@@ -94,8 +107,7 @@
           align-items: center;
 }
 
-.button_style,
-.skip {
+.button_style {
   border: none;
   background: #19a688;
   color: #ffffff;
@@ -105,6 +117,25 @@
   outline: none;
   border-radius: 3px;
   font-weight: bold;
+  text-transform: uppercase;
+}
+
+.skip-button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 10px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+  margin-left: 25px;
+  margin-bottom: 19px;
+}
+
+.skip-button:focus {
+  outline: none;
 }
 
 .active {
@@ -137,6 +168,11 @@
           animation: spinner 1s linear infinite;
 }
 
+.custom_select {
+  max-width: 600px;
+  height: 44px;
+}
+
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -157,5 +193,32 @@
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.select_existing_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.select_existing_container .select_label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.select_save_area {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=step.css.map */

@@ -65,7 +65,7 @@ class StepWizard extends Component {
           <div className={`number ${i <= activeIndex ? "active" : ""}`}>
             {i + 1}
           </div>
-          <span style={{ position: "absolute", left: -10 }}>{step.title}</span>
+          <span style={{ position: "absolute", left: -14 }}>{step.title}</span>
         </div>
       );
     });
@@ -111,7 +111,7 @@ class StepWizard extends Component {
         <div className="footer">
           {activeIndex + 1 !== totalSteps && (
             <button
-              className="skip"
+              className="skip-button"
               onClick={() => this._nextStep()}
               disabled={activeIndex + 1 === totalSteps}
             >

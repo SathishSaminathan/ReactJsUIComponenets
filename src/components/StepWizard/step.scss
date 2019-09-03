@@ -40,6 +40,9 @@ $white: #ffffff;
         &:last-child {
           width: 35px;
         }
+        span {
+          font-size: 15px;
+        }
         // &:last-child::after {
         //   width: 0;
         // }
@@ -61,6 +64,11 @@ $white: #ffffff;
     }
   }
   .body_container {
+    min-height: 405px;
+    background-color: $white;
+    .template_Area {
+      width: 80%;
+    }
   }
   .footer {
     min-height: 50px;
@@ -70,8 +78,7 @@ $white: #ffffff;
   }
 }
 
-.button_style,
-.skip {
+.button_style {
   border: none;
   background: $green_color;
   color: $white;
@@ -81,6 +88,24 @@ $white: #ffffff;
   outline: none;
   border-radius: 3px;
   font-weight: bold;
+  text-transform: uppercase;
+}
+.skip-button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 10px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+  &:focus {
+    outline: none;
+  }
+  margin-left: 25px;
+  margin-bottom: 19px;
+  // font-weight: bold;
 }
 
 .active {
@@ -107,6 +132,11 @@ $white: #ffffff;
   animation: spinner 1s linear infinite;
 }
 
+.custom_select {
+  max-width: 600px;
+  height: 44px;
+}
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -114,4 +144,22 @@ $white: #ffffff;
   100% {
     transform: rotate(360deg);
   }
+}
+
+// select existing template starts here
+.select_existing_container {
+  // width: 90%;
+  display: flex;
+  flex-direction: column;
+
+  .select_label {
+    align-self: flex-start;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+.select_save_area {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
