@@ -31,7 +31,6 @@ class Campaign extends Component {
   };
 
   selectTemplate = value => {
-    debugger;
     this.setState({
       activeComponent: value
     });

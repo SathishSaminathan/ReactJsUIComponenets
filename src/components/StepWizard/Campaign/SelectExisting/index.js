@@ -13,6 +13,7 @@ class SelectExistingTemplate extends Component {
             <select
               className="form-control custom_select"
               style={{ width: 641 }}
+              placeholder="Select any Campaign"
             >
               <option>Campaign 1137</option>
             </select>

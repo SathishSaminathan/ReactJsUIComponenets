@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { Modal } from "react-bootstrap";
 
 import "./step.css";
 import Campaign from "./Campaign";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
-import Step5 from "./Step5";
 
 class StepWizard extends Component {
   constructor(props) {
@@ -103,23 +103,27 @@ class StepWizard extends Component {
     const { activeIndex, steps } = this.state;
     const totalSteps = steps.length;
     return (
-      <div className="main_container">
-        <div className="header">
-          <div className="number_area">{this._renderNumber()}</div>
-        </div>
-        <div className="body_container">{this._renderStep()}</div>
-        <div className="footer">
-          {activeIndex + 1 !== totalSteps && (
-            <button
-              className="skip-button"
-              onClick={() => this._nextStep()}
-              disabled={activeIndex + 1 === totalSteps}
-            >
-              Skip this step
-            </button>
-          )}
-        </div>
-      </div>
+      // <Modal show bsSize="lg">
+      //   <Modal.Body>
+          <div className="main_container">
+            <div className="header">
+              <div className="number_area">{this._renderNumber()}</div>
+            </div>
+            <div className="body_container">{this._renderStep()}</div>
+            <div className="footer">
+              {activeIndex + 1 !== totalSteps && (
+                <button
+                  className="skip-button"
+                  onClick={() => this._nextStep()}
+                  disabled={activeIndex + 1 === totalSteps}
+                >
+                  Skip this step
+                </button>
+              )}
+            </div>
+          </div>
+      //   </Modal.Body>
+      // </Modal>
     );
   }
 }
