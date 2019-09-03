@@ -93,7 +93,7 @@
 }
 
 .main_container .body_container .template_Area {
-  width: 80%;
+  width: 100%;
 }
 
 .main_container .footer {
@@ -203,13 +203,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.select_existing_container .select_label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+.select_existing_container div .select_label {
   font-size: 15px;
   font-weight: bold;
+  text-align: left;
 }
 
 .select_save_area {

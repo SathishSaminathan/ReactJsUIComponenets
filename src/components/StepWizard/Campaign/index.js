@@ -43,15 +43,23 @@ class Campaign extends Component {
         style={{
           minHeight: 405,
           backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
+          display: "flex"
+          // alignItems: "center",
+          // justifyContent: "center"
         }}
       >
         {activeComponent ? (
           <div className="template_Area">{this.renderTemplate()}</div>
         ) : (
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%"
+            }}
+          >
             <button
               className="button_style"
               style={{ width: 256, height: 40 }}
