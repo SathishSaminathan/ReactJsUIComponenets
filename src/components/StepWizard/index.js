@@ -48,19 +48,7 @@ function StepWizard() {
     const StepComponent = config[activeIndex].component;
     return <StepComponent moveStep={type => _moveStep(type)} />;
   };
-
-  const _nextStep = () => {
-    if (activeIndex + 1 !== config.length) {
-      setActiveIndex(activeIndex + 1);
-    }
-  };
-
-  const _prevStep = () => {
-    if (activeIndex - 1 !== -1) {
-      setActiveIndex(activeIndex - 1);
-    }
-  };
-
+  
   const _moveStep = type => {
     if (type === "NEXT") {
       if (activeIndex + 1 !== config.length) {
