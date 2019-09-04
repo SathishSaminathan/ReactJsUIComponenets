@@ -14,7 +14,7 @@ class Campaign extends Component {
   handleSave = () => {
     this.setState({ isLoading: true });
     setTimeout(() => {
-      this.props.nextStep();
+      this.props.moveStep("NEXT");
     }, 1000);
   };
 

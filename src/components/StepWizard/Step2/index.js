@@ -11,7 +11,7 @@ class Step2 extends Component {
   handleSave = () => {
     this.setState({ isLoading: true });
     setTimeout(() => {
-      this.props.nextStep();
+      this.props.moveStep("NEXT");
     }, 1000);
   };
 
@@ -28,7 +28,7 @@ class Step2 extends Component {
         >
           <button
             className="button_style"
-            onClick={() => this.props.prevStep()}
+            onClick={() => this.props.moveStep("PREV")}
           >
             Back
           </button>

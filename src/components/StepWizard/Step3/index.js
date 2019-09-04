@@ -7,11 +7,11 @@ class Step3 extends Component {
   render() {
     return (
       <div style={{ height: 400, backgroundColor: "white" }}>
-        <button className="button_style" onClick={() => this.props.prevStep()}>
+        <button className="button_style" onClick={() => this.props.moveStep("PREV")}>
           Back
         </button>
         Step3
-        <button className="button_style" onClick={() => this.props.nextStep()}>
+        <button className="button_style" onClick={() => this.props.moveStep("NEXT")}>
           Save & Continue
         </button>
       </div>
