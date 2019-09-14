@@ -3,12 +3,16 @@ $green_color: #19a688;
 $inactive_color: #637079;
 $white: #ffffff;
 
+.wizard_modal {
+  .modal-dialog {
+    transform: translate(0, 0) !important;
+  }
+  .modal-body {
+    padding: 0;
+  }
+}
+
 .main_container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
   .header {
     min-height: 100px;
     background-color: $background_color;
@@ -21,21 +25,30 @@ $white: #ffffff;
       .separate_number {
         width: 150px;
         position: relative;
-        &::after {
+        &::before {
           content: "";
           position: absolute;
           height: 2px;
           background-color: $inactive_color;
-          width: 70%;
-          right: 3%;
+          width: 106px;
+          left: -110px;
           top: 50%;
+        }
+        &:nth-child(1)::before {
+          width: 0;
+        }
+        &.active::before {
+          background-color: $green_color;
         }
         &:last-child {
           width: 35px;
         }
-        &:last-child::after {
-          width: 0;
+        span {
+          font-size: 15px;
         }
+        // &:last-child::after {
+        //   width: 0;
+        // }
         .number {
           width: 35px;
           height: 35px;
@@ -54,20 +67,113 @@ $white: #ffffff;
     }
   }
   .body_container {
+    min-height: 405px;
+    background-color: $white;
+    .template_Area {
+      width: 100%;
+    }
   }
   .footer {
     min-height: 50px;
     background-color: $white;
     display: flex;
     align-items: center;
-    
   }
 }
 
-.button_style, .skip {
+.button_style {
   border: none;
   background: $green_color;
   color: $white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.skip-button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 10px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+  &:focus {
+    outline: none;
+  }
+  margin-left: 25px;
+  margin-bottom: 19px;
+  // font-weight: bold;
+}
+
+.active {
+  border: none !important;
+  transform: none;
+  color: white;
+  font-weight: normal;
+}
+
+.button_text_area {
+  display: flex;
+  align-items: center;
+}
+
+.loading_spinner {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  display: inline-block;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top: 2px solid $white;
+  animation: spinner 1s linear infinite;
+}
+
+.custom_select {
+  max-width: 600px;
+  height: 44px;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// select existing template starts here
+.select_existing_container {
+  // width: 90%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  div {
+    .select_label {
+      font-size: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+}
+.select_save_area {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// new product styles starts here
+.new_product_container {
+  .row {
+    margin: 0;
+  }
 }

@@ -1,0 +1,126 @@
+.page {
+  padding: 37px 54px 37px 42px;
+  .campaign-heading {
+    color: #2f404c;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 36px;
+  }
+  .form-control {
+    height: 40px !important;
+  }
+  .check-box-heading {
+    background-color: #f8f8f8;
+    border-color: #e8e9ec;
+    height: 44px;
+    width: 204px;
+    justify-content: center;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+  }
+
+  .custom-checkBox input {
+    display: none;
+  }
+  .custom-checkBox label {
+    height: 25px;
+    // border: 1px solid #43425d !important;
+    background: url("data:image/svg+xml;utf8,<svg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'><g><g><path d='M437.019,74.98C388.667,26.629,324.38,0,256,0C187.619,0,123.331,26.629,74.98,74.98C26.628,123.332,0,187.62,0,256 s26.628,132.667,74.98,181.019C123.332,485.371,187.619,512,256,512c68.38,0,132.667-26.629,181.019-74.981 C485.371,388.667,512,324.38,512,256S485.371,123.333,437.019,74.98z M256,482C131.383,482,30,380.617,30,256S131.383,30,256,30 s226,101.383,226,226S380.617,482,256,482z' fill='%23cccccc'/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 50px !important;
+    font-size: 16px;
+  }
+  .custom-checkBox input:checked + label {
+    background: url("data:image/svg+xml;utf8,<svg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'><g><g><path fill='%231ab394' d='M437.019,74.98C388.667,26.629,324.38,0,256,0C187.619,0,123.332,26.629,74.98,74.98C26.629,123.332,0,187.62,0,256 s26.629,132.667,74.98,181.019C123.332,485.371,187.62,512,256,512s132.667-26.629,181.019-74.98 C485.371,388.667,512,324.38,512,256S485.371,123.333,437.019,74.98z M378.306,195.073L235.241,338.139 c-2.929,2.929-6.768,4.393-10.606,4.393c-3.839,0-7.678-1.464-10.607-4.393l-80.334-80.333c-5.858-5.857-5.858-15.354,0-21.213 c5.857-5.858,15.355-5.858,21.213,0l69.728,69.727l132.458-132.46c5.857-5.858,15.355-5.858,21.213,0 C384.164,179.718,384.164,189.215,378.306,195.073z'/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>")
+      no-repeat;
+  }
+
+  .info {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    background-color: #f8f8f8;
+    display: inline-block;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info span {
+    display: block;
+    text-align: center;
+  }
+
+  .pb-31 {
+    padding-bottom: 31px;
+  }
+
+  .pt-31 {
+    padding-top: 31px;
+  }
+
+  .countries {
+    font-size: 18px;
+    color: #4d4f5c;
+    padding-bottom: 18px;
+  }
+
+  .countries-container {
+    padding: 17px 19px 27px 19px;
+    border: 1px solid #e6e6e6 !important;
+    border-radius: 8px;
+    display: flex !important;
+  }
+
+  .country-tag {
+    width: 124px;
+    height: 31px !important;
+    background-color: #e8e9ec;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 13px !important;
+  }
+
+  .country-tag .close {
+    font-size: 12px;
+  }
+
+  .footer {
+    display: inline-flex;
+    .cancelButton {
+      height: 40px !important;
+      width: 120px !important;
+      text-transform: uppercase;
+      color: #43425d !important;
+      border: 1px solid #e6e6e6 !important;
+      background-color: #fff;
+      margin-right: 30px;
+    }
+
+    .cancelButton :hover {
+      background-color: #fff;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active,
+    .btn-primary:not(:disabled):not(.disabled):active,
+    .show > .btn-primary.dropdown-toggle {
+      background-color: #fff !important;
+    }
+
+    .button {
+      height: 40px !important;
+      width: 174px !important;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.primary-black {
+  color: #43425d !important;
+}

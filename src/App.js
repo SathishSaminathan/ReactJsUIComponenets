@@ -11,7 +11,7 @@ import GeoCode from "./components/GeoCode";
 import PaginationComponent from "./components/PaginationComponent";
 import StepWizard from "./components/StepWizard";
 import Formsample from "./components/Form";
-import Step1 from "./components/StepWizard/Step1";
+import Campaign from "./components/StepWizard/Campaign";
 import Step2 from "./components/StepWizard/Step2";
 
 const ImagesData = [
@@ -58,7 +58,7 @@ const ImagesData = [
 
 const steps = [
   {
-    component: <Step1 />
+    component: <Campaign />
   },
   {
     component: <Step2 />
