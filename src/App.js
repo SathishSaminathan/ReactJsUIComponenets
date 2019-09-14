@@ -14,6 +14,7 @@ import Formsample from "./components/Form";
 import Campaign from "./components/StepWizard/Campaign";
 import Step2 from "./components/StepWizard/Step2";
 import Rating from "./components/Rating";
+import MouseMovement from "./components/MouseMovement";
 
 const ImagesData = [
   {
@@ -99,13 +100,14 @@ class App extends Component {
         {/* <PaginationComponent/> */}
         {/* <StepWizard steps={steps} /> */}
         {/* <Formsample/> */}
-        <Rating
+        {/* <Rating
           size={"50px"}
           color={"red"}
           disabledColor={"lightgrey"}
           totalStars={4}
           onSelect={rating => this.setState({ rating })}
-        />
+        /> */}
+        <MouseMovement/>
       </div>
     );
   }
