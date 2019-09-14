@@ -13,6 +13,7 @@ import StepWizard from "./components/StepWizard";
 import Formsample from "./components/Form";
 import Campaign from "./components/StepWizard/Campaign";
 import Step2 from "./components/StepWizard/Step2";
+import Rating from "./components/Rating";
 
 const ImagesData = [
   {
@@ -85,19 +86,26 @@ class App extends Component {
       <div className="App">
         {/* <DragAndDrop/> */}
         {/* <ImageViewer
-          imageCount={4}
-          ImagesData={ImagesData}
-        /> */}
+            imageCount={4}
+            ImagesData={ImagesData}
+          /> */}
         {/* <GeoCode getDetails={this.getDetails} /> */}
         {/* <div>
-          <h2>Address Details</h2>
-          <p>{city}</p>
-          <p>{state}</p>
-          <p>{country}</p>
-        </div> */}
+            <h2>Address Details</h2>
+            <p>{city}</p>
+            <p>{state}</p>
+            <p>{country}</p>
+          </div> */}
         {/* <PaginationComponent/> */}
-        <StepWizard steps={steps} />
+        {/* <StepWizard steps={steps} /> */}
         {/* <Formsample/> */}
+        <Rating
+          size={"50px"}
+          color={"red"}
+          disabledColor={"lightgrey"}
+          totalStars={4}
+          onSelect={rating => this.setState({ rating })}
+        />
       </div>
     );
   }
