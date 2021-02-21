@@ -3,13 +3,17 @@
   --y: 0;
   height: 100vh;
   .moving_object {
-    width: 50px;
-    transition: all .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    height: 50px;
-    background-color: tomato;
+    width: 100px;
+    transition: all .2s linear;
+    height: 100px;
+    // background-color: tomato;
     border-radius: 50%;
     position: absolute;
     left: var(--x);
     top: var(--y);
+    background-image: url("https://thumbs.gfycat.com/BoringAliveArcticseal-small.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
   }
 }

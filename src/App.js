@@ -15,6 +15,8 @@ import Campaign from "./components/StepWizard/Campaign";
 import Step2 from "./components/StepWizard/Step2";
 import Rating from "./components/Rating";
 import MouseMovement from "./components/MouseMovement";
+import Login from "./components/Login_Signup";
+import GetData from "./components/GetData";
 
 const ImagesData = [
   {
@@ -107,7 +109,9 @@ class App extends Component {
           totalStars={4}
           onSelect={rating => this.setState({ rating })}
         /> */}
-        <MouseMovement/>
+        {/* <MouseMovement/> */}
+        {/* <Login /> */}
+        <GetData/>
       </div>
     );
   }
