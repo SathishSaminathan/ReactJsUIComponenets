@@ -1,0 +1,20 @@
+.rate_container {
+  --selected_color: yellow;
+  --disabled_color:blue;
+  --icon_size:24px;
+  display: inline-block;
+}
+
+.rate_container .start_style {
+  font-size: var(--icon_size);
+  cursor: pointer;
+  margin-right: 5px;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  color: var(--disabled_color);
+}
+
+.rate_container .start_style.active {
+  color: var(--selected_color);
+}
+/*# sourceMappingURL=Rating.css.map */
