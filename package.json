@@ -9,7 +9,7 @@
     "bootstrap": "3.3.6",
     "firebase": "^6.0.2",
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-bootstrap": "0.32.4",
     "react-dom": "^16.8.6",
